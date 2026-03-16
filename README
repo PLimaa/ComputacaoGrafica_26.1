@@ -1,0 +1,10 @@
+function setup() {
+  createCanvas(500, 500);
+  let r = (500/(1+sqrt(2))*0.5) 
+  background ('gray')
+  fill('white')
+  circle (r,r+r*sqrt(2) , 2*r)
+  circle (r + r*sqrt(2),r, 2*r)
+  circle (r+r*sqrt(2),r+2*r*sqrt(2) , 2*r)
+  circle (r+2*r*sqrt(2),r+r*sqrt(2) , 2*r)
+}

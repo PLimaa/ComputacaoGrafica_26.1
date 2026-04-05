@@ -117,19 +117,19 @@ function draw() {
   noFill(); 
   
   // Passaro 1
-  let pass1X = solX + 240;
+  let pass1X = solX + width*0.3;
   let pass1Y = solY;
   arc(pass1X, pass1Y, 40, 20, PI, 0); 
   arc(pass1X + 35, pass1Y, 40, 20, PI, 0);
   
   // Passaro 2
-  let pass2X = solX + 430;
+  let pass2X = solX + width*0.6;
   let pass2Y = solY - 60;
   arc(pass2X, pass2Y, 20, 10, PI, 0); 
   arc(pass2X + 18, pass2Y, 20, 10, PI, 0);
   
   // Passaro 3
-  let pass3X = solX + 550;
+  let pass3X = solX + width*0.75;
   let pass3Y = solY + 75;
   arc(pass3X, pass3Y, 30, 15, PI, 0); 
   arc(pass3X + 25, pass3Y, 30, 15, PI, 0);
@@ -139,7 +139,7 @@ function draw() {
   let fY = height * 0.82;
   
   // Guarda-Sol
-  let gsX = fX - 130;
+  let gsX = fX - (width*0.19);
   let gsY = fY + 20; 
   
   // Sombra
@@ -151,9 +151,9 @@ function draw() {
   fill('#80421C');
   rect(gsX - 4, gsY - 180, 8, 200); 
   
-  // TOPO (Pano Verde)
-  fill('#701CC5'); // Verde escuro
-  ellipse(gsX, gsY - 180, 190, 60); // Pano em cima da haste
+  // Topo
+  fill('#701CC5'); 
+  ellipse(gsX, gsY - 180, 190, 60); 
   
   // Corpo e Pescoço
   fill(255); 
@@ -174,7 +174,7 @@ function draw() {
   
   // Pupilas
   noStroke();
-  fill(0); // Pupila
+  fill(0);
   circle(fX - 8, fY - 90, 5);
   circle(fX + 8, fY - 90, 5);
   
@@ -195,13 +195,13 @@ function draw() {
   fill(255, 250, 240);
   push();
   translate(fX - 18, fY);
-  rotate(radians(15)); // Asa esquerda levantada
+  rotate(radians(15)); 
   ellipse(0, 0, 15, 60);
   pop();
   
   push();
   translate(fX + 18 , fY);
-  rotate(radians(-15)); // Asa direita levantada
+  rotate(radians(-15)); 
   ellipse(0, 0, 15, 60);
   pop();
 
@@ -238,12 +238,12 @@ function draw() {
   noStroke();
   quad(palmX - 15, palmY,      // Base esquerda
        palmX + 15, palmY,      // Base direita
-       palmX + 5, palmY - 300, // Topo direito 
-       palmX - 5, palmY - 300);// Topo esquerdo 
+       palmX + 5, palmY - height*0.45, // Topo direito 
+       palmX - 5, palmY - height*0.45);// Topo esquerdo 
   
   //Folhas
   push();
-  translate(palmX, palmY - 300); 
+  translate(palmX, palmY - height*0.45); 
   fill('#285C19');
   
   // Folhas da Direita
@@ -265,7 +265,6 @@ function draw() {
   
 }
 
-// Essa função faz o desenho se ajustar se você redimensionar a janela do navegador
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
